@@ -1,5 +1,6 @@
 @startuml
 package Game{
+package ttt{
 
     class TicTacToe{
         +TicTacToe()
@@ -47,10 +48,11 @@ package Game{
         -0
         -Empty
     }
-
+}
+}
     AI_bot --|> Player
     Human --|> Player
-    Turn *-- TicTacToe
+    Turn --* TicTacToe
     Turn --> Player
     Player *--> Piece
     Player ..> Coordinate
