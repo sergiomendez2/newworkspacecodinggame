@@ -1,0 +1,11 @@
+//a favor
+*el diagrama esta bastante bien, cada una de las figuras cumple su rol
+de acuerdo a la asignacion que se le atribuye.
+
+//en contra
+La relacion Game -> Games es redundante, ya que en la entidad "Game" ya aparecen reflejadas
+las especializaciones que se le asignarian
+
+//mejoras
+quitar la parte de games debido a que es algo muy redundante
+y verificar que si el game esta compuesto o solo necesita saber el listado de jugadores.

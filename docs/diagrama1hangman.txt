@@ -1,0 +1,21 @@
+<<<<<<< HEAD
+//A favor
+El diagrama nos muestra una vision general de lo que el juego hara cuando sea implementado, 
+las relaciones utilizadas concuerdan con los elementos que cada uno de los mismos necesitara para cumplir su funcion.
+=======
+//a favor
+>>>>>>> 1a510396af944d4dcf4c01957fc943c93aa9dd4d
+
+//en contra
+*Como buenas practicas de diagrama de disenios es recomedable
+que las figuras sean menores de 12 a 15 ya que se busca
+optimizar el tiempo de desarrollo y asi tener una mejor
+eficiencia al momento de compartirlo con el grupo de
+desarrollo y asi tener un mejor analisis de lo que se esta
+queriendo realizar. el diagrama cuenta con 19 figuras.
+
+<<<<<<< HEAD
+
+//mejoras
+segun las buenas practicas de flujos de procesos, dado que todo programa es un conjunto de instrucciones para lograr un resultado especifico, se dice que lo optimo es de 12-15 figuras MAXIMO, pero que por dicha "buena practica" podemos concluir que este diagrama o proceso no esta en su optimo estado por lo que se seria de muy buena practica dividir todo el proceso en dos para que de esta forma el proceso este "opimizado" 
+>>>>>>> 1d526a08ce0de6b0ad8bc82fe6acd424d41f8513
