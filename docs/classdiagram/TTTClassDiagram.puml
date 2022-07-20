@@ -1,0 +1,69 @@
+@startuml
+package Game{
+
+    class TicTacToe{
+        +TicTacToe()
+        +play()
+        -Player player1
+        -Player player2
+    }
+
+    class AI_bot{
+        +getCoordinate(): coordinate
+    }
+
+    class Human{
+        +getCoordinate(): coordinate
+    }
+
+    class Turn{
+        -Board board
+        +Turn(Board board)
+        +init()
+        +playTurns()
+        +printEndGame()
+        +getNextPlayer() Player
+    }
+
+    abstract Player{
+        +getCoordinate(): coordinate
+        +put()
+    }
+
+    class Coordinate{
+        +isSequence(coordinate cord) boolean
+    }
+
+    class Board{
+        -Piece[3][3] square
+        +putPiece() boolean
+        +paintBoard()
+        +isTTT()
+        +getWinner()
+    }
+
+    enum Piece{
+        -X
+        -0
+        -Empty
+    }
+
+    AI_bot --|> Player
+    Human --|> Player
+    Turn *-- TicTacToe
+    Turn --> Player
+    Player *--> Piece
+    Player ..> Coordinate
+    Player --> Board
+    Board *--> Piece
+    TicTacToe *-- Player
+    TicTacToe *--> Board
+
+
+
+
+
+
+
+
+@enduml
