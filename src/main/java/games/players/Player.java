@@ -1,8 +1,5 @@
 package games.players;
-
-import games.HangManGame.hangman.HangedManPlayer;
-
-public abstract class Player implements HangedManPlayer {
+public abstract class Player {
     private int id;
     private String name;
     private Player[] players;
