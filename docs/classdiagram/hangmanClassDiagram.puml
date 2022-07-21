@@ -1,4 +1,24 @@
 @startuml
+package Player {
+abstract Player{}
+class ListOfPlayer{}
+class IA
+class Human
+}
+package game {
+
+interface gamePlayer{
+        +Results(): resume
+    }
+    class Game {
+        -gamePlayer: players[]
+        +{abstract} resume()
+        +{abstract} play()
+        +getPlayer(gamePlayerList getPlayer)
+    }
+    interface gamePlayerList{
+            +getPlayerList(int total_Players): gamePlayer[]
+    }
 
 package hangman{
 class hangedMan{
@@ -42,16 +62,19 @@ Interface HangedManPlayer
     HangMan *-- Player
     HangMan *-- "2" Round
 
-package players{
-    class ListOfPlayers{
-        +getPlayers(int amount):Player[]
-    }
 
-    class Player{
-    }
+
+
+gamePlayer..|> HangedManPlayer
+Player ..|> gamePlayer
+ListOfPlayer ..|> gamePlayerList
+Game..>gamePlayerList
+Game..|>HangMan
+Game*--gamePlayer
+IA--|>Player
+Human--|>Player
+
+
 }
-
-HangMan ..> ListOfPlayers:getPlayer()
-Player ..|> HangedManPlayer
 }
 @enduml

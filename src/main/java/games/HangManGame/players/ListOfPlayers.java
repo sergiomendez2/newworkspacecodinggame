@@ -1,4 +1,4 @@
-package HangManGame.players;
+package games.HangManGame.players;
 
 public class ListOfPlayers {
 

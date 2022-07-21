@@ -1,4 +1,4 @@
-package HangManGame.hangman;
+package games.HangManGame.hangman;
 
 public class HangMan {
     private final int MAX_ATTEMPTS = 8;
