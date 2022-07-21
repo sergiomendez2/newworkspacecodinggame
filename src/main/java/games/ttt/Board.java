@@ -1,4 +1,7 @@
-public class Board(){
+package main.java.games.ttt;
+
+import java.util.Random;
+public class Board{
     // 0 means empty
     // 1 means X
     // 2 means O
@@ -47,5 +50,4 @@ public class Board(){
     public int[][] getBoard(){
         return board;
     }
-}
 }

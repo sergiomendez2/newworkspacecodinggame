@@ -1,6 +1,6 @@
-package games.ttt;
+package main.java.games.ttt;
 
-public class  Turn(){
+public class  Turn{
     public Turn() {
     }
 }
