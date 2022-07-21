@@ -1,7 +1,12 @@
 @startuml
-Interface HangedManPlayer
-package hangman{
 
+package hangman{
+class hangedMan{
++public char[] secreteWordSeparatedByHyphens;
+separateSecretWordByHyphens(string secretWord):char[]
++giveHint(string secretWord)
+}
+Interface HangedManPlayer
     class HangMan{
         +HangMan()
         +getAmountOfPlayers():int
@@ -9,8 +14,6 @@ package hangman{
     }
 
     class Round
-
-    }
 
     class Turn{
         -WordGiverable wordGiver
@@ -37,7 +40,7 @@ package hangman{
     Turn *-- hangedMan
     Round *-- Turn
     HangMan *-- Player
-    HangMan *-- Round
+    HangMan *-- "2" Round
 
 package players{
     class ListOfPlayers{
@@ -50,4 +53,5 @@ package players{
 
 HangMan ..> ListOfPlayers:getPlayer()
 Player ..|> HangedManPlayer
+}
 @enduml
