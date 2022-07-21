@@ -1,7 +1,32 @@
 @startuml
-Interface HangedManPlayer
-package hangman{
+package Player {
+abstract Player{}
+class ListOfPlayer{}
+class IA
+class Human
+}
+package game {
 
+interface gamePlayer{
+        +Results(): resume
+    }
+    class Game {
+        -gamePlayer: players[]
+        +{abstract} resume()
+        +{abstract} play()
+        +getPlayer(gamePlayerList getPlayer)
+    }
+    interface gamePlayerList{
+            +getPlayerList(int total_Players): gamePlayer[]
+    }
+
+package hangman{
+class hangedMan{
++public char[] secreteWordSeparatedByHyphens;
+separateSecretWordByHyphens(string secretWord):char[]
++giveHint(string secretWord)
+}
+Interface HangedManPlayer
     class HangMan{
         +HangMan()
         +getAmountOfPlayers():int
@@ -9,8 +34,6 @@ package hangman{
     }
 
     class Round
-
-    }
 
     class Turn{
         -WordGiverable wordGiver
@@ -37,17 +60,22 @@ package hangman{
     Turn *-- hangedMan
     Round *-- Turn
     HangMan *-- Player
-    HangMan *-- Round
+    HangMan *-- "2" Round
 
-package players{
-    class ListOfPlayers{
-        +getPlayers(int amount):Player[]
-    }
 
-    class Player{
-    }
+
+
+gamePlayer..|> HangedManPlayer
+Player ..|> gamePlayer
+ListOfPlayer ..|> gamePlayerList
+Game..>gamePlayerList
+Game..|>HangMan
+Game*--gamePlayer
+IA--|>Player
+Human--|>Player
+Turn*--HangedManPlayer
+
+
 }
-
-HangMan ..> ListOfPlayers:getPlayer()
-Player ..|> HangedManPlayer
+}
 @enduml

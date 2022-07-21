@@ -1,12 +1,26 @@
 @startuml
 package Game{
+    interface gamePlayer{
+        +Results(): resume
+    }
+    class Game {
+        -gamePlayer: players[]
+        +{abstract} resume()
+        +{abstract} play()
+        +getPlayer(gamePlayerList getPlayer)
+
+    }
+    interface gamePlayerList{
+            +getPlayerList(int total_Players): gamePlayer[]
+
+    }
 package ttt{
 
     class TicTacToe{
         +TicTacToe()
-        +play()
-        -Player player1
-        -Player player2
+        +tttPlayer: player1
+        +tttPlayer: player2
+
     }
 
 
@@ -39,10 +53,15 @@ package ttt{
     }
     interface tttPlayer{
        +getCoordinate(board):coordinate
+
     }
+
 }
 }
 package player{
+    class ListOfPlayer{
+
+    }
     abstract Player{
             +getCoordinate(): coordinate
             +put()
@@ -55,6 +74,7 @@ package player{
         +getCoordinate(): coordinate
     }
 }
+    Game <|.. TicTacToe
     AI_bot --|> Player
     Human --|> Player
     Turn --* TicTacToe
@@ -63,15 +83,12 @@ package player{
     tttPlayer ..> Coordinate
     tttPlayer --> Board
     Board *--> Piece
-    TicTacToe *-- Player
+    TicTacToe *-- tttPlayer
     TicTacToe *--> Board
-    Player ..|> tttPlayer
-
-
-
-
-
-
-
+    Player ..|> gamePlayer
+    gamePlayer ..|> tttPlayer
+    Game *.. gamePlayer
+    Game ..> gamePlayerList
+    ListOfPlayer ..|> gamePlayerList
 
 @enduml

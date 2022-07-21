@@ -1,3 +1,8 @@
+package main.java.games.ttt;
+import java.util.Random;
+import java.util.Scanner;
+
+
 public abstract class TicTacToe(){
     public static main() {
         Scanner userInputReader = new Scanner(System.in);

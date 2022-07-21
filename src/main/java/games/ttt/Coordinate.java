@@ -1,4 +1,7 @@
-public class Coordinate(){
+package main.java.games.ttt;
+
+import java.util.Random;
+public class Coordinate{
     public static boolean are3PiecesInLine(int[][] board, int row, int col) {
         int gamePiece = board[row][col];
         if(gamePiece == 0) return false;
