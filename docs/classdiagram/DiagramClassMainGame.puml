@@ -1,11 +1,7 @@
 @startuml
-package executablegames{
- class Util{
- +getramdomnumber()
- +roldiceNumber()
- }
+package executableGames{
     class Main{
-
+        main()
     }
 
     Class MainGames{
@@ -21,13 +17,18 @@ package executablegames{
     }
 
     class CRUD{
-
+        -ListOfPlayers listOfPlayers
+        + CRUD()
+        + executeCrud(): void
+        + createPlayer(): void
+        + showPlayer(): void
+        + updatePlayer(): void
+        + deletePlayer(): void
     }
 
     class Statistics{
-
+        + showStatistics()
     }
-
 
     package players{
         class ListOfPlayers{
@@ -48,13 +49,20 @@ package executablegames{
         }
     }
 
+    package utils{
+        class Dice{
+            + getRandomNumber()
+        }
+    }
+
     Main *-- MainGames
 
     MainGames *-- CRUD
     MainGames *-- Statistics
-    MainGames *-- ListOfPlayers
+    MainGames --> ListOfPlayers
     MainGames *--"2" Game
-    MainGames *-- ListOfResults
-    MainGames ..>Util
+    MainGames --> ListOfResults
+    MainGames --> Dice
 
+    CRUD --> ListOfPlayers
 @enduml

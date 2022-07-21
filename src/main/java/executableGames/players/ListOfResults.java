@@ -1,2 +1,4 @@
-package executableGames.players;public class ListOfResults {
+package executableGames.players;
+
+public class ListOfResults {
 }

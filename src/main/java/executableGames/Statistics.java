@@ -1,2 +1,4 @@
-package executableGames;public class Statistics {
+package executableGames;
+
+public class Statistics {
 }

@@ -1,2 +1,4 @@
-package executableGames;public class utils {
+package executableGames;
+
+public class utils {
 }
