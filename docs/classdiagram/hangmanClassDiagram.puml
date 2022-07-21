@@ -73,6 +73,7 @@ Game..|>HangMan
 Game*--gamePlayer
 IA--|>Player
 Human--|>Player
+Turn*--HangedManPlayer
 
 
 }
