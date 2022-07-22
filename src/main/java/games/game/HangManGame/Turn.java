@@ -10,7 +10,7 @@ public class Turn{
     private WordGuesserable wordGuesserable;
     private HangedMan hangedman;
 
-   Turn(int maxAttempts, Player player1 , Player player2) {
+   Turn() {
 
    }
   }

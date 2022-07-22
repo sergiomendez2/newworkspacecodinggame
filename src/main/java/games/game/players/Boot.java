@@ -38,6 +38,8 @@ public class Boot extends Player {
 
     @Override
     public void result() {
-
+        System.out.println("showing result from Boot Player first");
+        ResultTempo result = new ResultTempo();
+        System.out.println(result.toString());
     }
 }

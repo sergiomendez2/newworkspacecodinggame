@@ -35,6 +35,8 @@ public class Human extends Player {
 
     @Override
     public void result() {
-
+        System.out.println("showing result from human Player");
+        ResultTempo result = new ResultTempo();
+        System.out.println(result.toString());
     }
 }

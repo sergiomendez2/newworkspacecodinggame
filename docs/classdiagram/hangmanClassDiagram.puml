@@ -41,7 +41,7 @@ Interface HangedManPlayer
         -WordGiverable wordGiver
         -WordGuesserable wordGuesser
         -HangedMan hangedMan
-        +Turn(int maxAttempts, Player[2] players )
+        +Turn()
     }
 
     interface WordGiverable{

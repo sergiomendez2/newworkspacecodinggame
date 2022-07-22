@@ -1,7 +1,9 @@
 package games.game.players;
 
 import games.TypeGame;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 public class ResultTempo {
     private int win;
     private int lose;
