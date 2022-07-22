@@ -5,5 +5,9 @@ import games.game.players.Player;
 
 public class Main {
     public static void main(String[] args) {
+
+        MainGames mainGames = new MainGames();
+        mainGames.printMenu();
+
     }
 }

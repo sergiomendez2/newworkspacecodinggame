@@ -5,6 +5,7 @@ import games.game.players.Player;
 import java.util.Scanner;
 
 public class Game {
+    public GamePlayer [] players;
     public static  Scanner scanner = new Scanner(System.in);
     public void resume() {
         // TODO implement here
@@ -14,7 +15,7 @@ public class Game {
     }
 
     public void getPlayer(GamePlayerListProvider getplayers) {
-        Player [] players = getplayers.getPlayer(10);
+        players = getplayers.getPlayer(10);
     }
 
 }
