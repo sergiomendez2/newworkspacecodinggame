@@ -1,7 +1,7 @@
 package games;
 
-import games.players.Player;
+import games.ttt.tttPlayer;
 
-public interface gamePlayer extends Player{
+public interface gamePlayer extends tttPlayer{
 
 }

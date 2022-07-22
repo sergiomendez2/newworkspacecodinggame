@@ -1,6 +1,6 @@
 package games.players;
-import games.gamePlayerList;
-public class ListOfPlayers implements gamePlayerList{
+import games.gamePlayerListProvider;
+public class ListOfPlayers implements gamePlayerListProvider{
     Player[] players;
     public void createPlayer() {}
     @Override
