@@ -22,7 +22,7 @@ interface gamePlayer{
 
 package hangman{
 class hangedMan{
-+public char[] secreteWordSeparatedByHyphens;
++secreteWordSeparatedByHyphens:char[]
 separateSecretWordByHyphens(string secretWord):char[]
 +giveHint(string secretWord)
 }

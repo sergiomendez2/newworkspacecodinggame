@@ -1,0 +1,79 @@
+@startuml
+package players{
+    class ListOfPlayers{
+        -Player[] players
+        +createPlayer()
+        +getPlayers(int amount):Player[]
+    }
+
+    abstract Player{
+        -int id
+        -String name
+        -ListOfResults listofResults
+    }
+
+    class ListOfResults{
+        -Result[] results
+    }
+
+    class Result{
+        -TypeGame typeGame
+        -int Win
+        -int Lose
+        -int Tie
+        -Player player
+    }
+
+    class ResultTempo{
+        -int win
+        -int Lose
+        -int tie
+        -TypeGame typeGame
+    }
+
+    class Human{
+
+    }
+
+    class Boot{
+
+    }
+
+
+
+    ListOfPlayers *-- Player
+    ListOfResults *-- Result
+
+
+    Human --|> Player
+    Boot --|> Player
+
+    Result *-- Player
+
+}
+
+package game{
+    enum TypeGame{
+        +TicTAcToe
+        +HangMan
+    }
+    package tictacto{
+        interface TicTacToePlayer{
+        }
+    }
+
+    package hangman{
+        interface HangManPlayer{
+        }
+    }
+}
+
+
+
+Result *-- TypeGame
+ResultTempo *-- TypeGame
+ResultTempo *-- Player
+
+Player ..|> TicTacToePlayer
+Player ..|> HangManPlayer
+@enduml
