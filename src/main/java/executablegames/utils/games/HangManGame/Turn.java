@@ -9,7 +9,7 @@ public class Turn{
     private HangedMan hangedman;
 
    Turn() {
-
+       System.out.println("Enter the word");
    }
   }
 

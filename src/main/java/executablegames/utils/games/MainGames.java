@@ -54,7 +54,7 @@ public class MainGames {
                 System.out.println("\nSelect an option:");
             }
 
-            private void executeOption () {
+            private void executeOption() {
                 int option;
                 option = scanner.nextInt();
 
