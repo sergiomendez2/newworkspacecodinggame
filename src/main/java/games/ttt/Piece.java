@@ -1,4 +1,4 @@
-package main.java.games.ttt;
+package games.ttt;
 import main.java.games.ttt.Board;
 import java.util.Random;
 

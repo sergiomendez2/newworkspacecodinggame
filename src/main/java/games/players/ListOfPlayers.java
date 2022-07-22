@@ -1,8 +1,12 @@
 package games.players;
-
-public class ListOfPlayers {
+import games.gamePlayerList;
+public class ListOfPlayers implements gamePlayerList{
     Player[] players;
-
-    public void getPlayers(int numberOfPlayers) {}
     public void createPlayer() {}
+    @Override
+    public Player[] getPlayer(int totalPlayers) {
+        players = new Player[totalPlayers];
+        return players;
+    }
+
 }
