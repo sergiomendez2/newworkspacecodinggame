@@ -1,5 +1,7 @@
 package executablegames.utils.games.HangManGame;
 
+import executablegames.utils.games.players.Player;
+
 import java.util.Scanner;
 
 public class Turn{
@@ -8,10 +10,40 @@ public class Turn{
     private WordGuesserable wordGuesserable;
     private HangedMan hangedman;
 
-   Turn() {
-       System.out.println("Enter the word");
+   Turn(int maxAttempts, Player player1, Player player2) {
+       wordGiverable = (WordGiverable) player1;
+       wordGuesserable =(WordGuesserable) player2;
+       boolean isGameOver = false;
+       boolean isLetterGuessed = false;
+       String word = wordGiverable.giveWord();
+       System.out.println(hangedman.separateSecretWordInLine(word));
+       do {
+           System.out.println(hangedman.secretWordSeparatedByLine);
+           char letter = wordGuesserable.tryLetter();
+           for (int i = 0; i < word.length(); i++) {
+               if (word.charAt(i) == letter) {
+                   hangedman.secretWordSeparatedByLine[i] = letter;
+                   isLetterGuessed = true;
+               }
+           }
+           //if letter is not in word, decrease attempts
+           if (!isLetterGuessed) {
+               System.out.println("Letter not found in secret word");
+               --maxAttempts;
+           }
+           if (maxAttempts == 0) {
+               System.out.println("You lost");
+               isGameOver=true;
+           }
+              isGameOver = !hangedman.isSecretWordSeparatedByLine();
+           if(isGameOver) {
+               System.out.println("You won");
+           }
+           }while (!isGameOver);
+
+       }
    }
-  }
+
 
 
 

@@ -9,11 +9,14 @@ public class Game {
         // TODO implement here
     }
     public void play() {
-        // TODO implement here
+        System.out.println("select Players");
+
+
     }
 
     public void getPlayer(GamePlayerListProvider getplayers) {
         players = getplayers.getPlayer(10);
+
     }
 
 }
