@@ -8,9 +8,9 @@ las especializaciones que se le asignarian
 
 //mejoras
 <<<<<<< HEAD
-quitar la parte de executableGames.games debido a que es algo muy redundante
-y verificar que si el game esta compuesto o solo necesita saber el listado de jugadores.
+quitar la parte de executablegames.utils.games.executablegames.utils.games.ttt.game debido a que es algo muy redundante
+y verificar que si el executablegames.utils.games.ttt.game esta compuesto o solo necesita saber el listado de jugadores.
 =======
-quitar la parte de games debido a que es algo muy redundante
-y verificar que si el games esta compuesto o solo necesita saber el listado de jugadores.
+quitar la parte de executablegames.utils.games.ttt.game debido a que es algo muy redundante
+y verificar que si el executablegames.utils.games.ttt.game esta compuesto o solo necesita saber el listado de jugadores.
 >>>>>>> 972f6f94dcad419a3db171f0f8d23231b86f3cad
