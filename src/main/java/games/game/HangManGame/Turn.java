@@ -1,6 +1,6 @@
-package games.HangManGame.hangman;
+package games.game.HangManGame;
 
-import games.players.Player;
+import games.game.players.Player;
 
 import java.util.Scanner;
 
@@ -11,6 +11,7 @@ public class Turn{
     private HangedMan hangedman;
 
    Turn(int maxAttempts, Player player1 , Player player2) {
+
    }
   }
 

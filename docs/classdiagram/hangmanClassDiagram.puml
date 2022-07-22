@@ -33,7 +33,9 @@ Interface HangedManPlayer
         -int maxAttempts
     }
 
-    class Round
+    class Round{
+    +reversePlayer(Player player1, Player player2)
+    }
 
     class Turn{
         -WordGiverable wordGiver

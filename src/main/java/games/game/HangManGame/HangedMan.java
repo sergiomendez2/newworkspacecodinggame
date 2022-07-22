@@ -1,4 +1,4 @@
-package games.HangManGame.hangman;
+package games.game.HangManGame;
 
 import java.util.Random;
 
