@@ -22,9 +22,10 @@ interface gamePlayer{
 
 package hangman{
 class hangedMan{
-+secreteWordSeparatedByHyphens:char[]
-separateSecretWordByHyphens(string secretWord):char[]
++secreteWordSeparatedByLines:char[]
++separateSecretWordByLine(string secretWord):char[]
 +giveHint(string secretWord)
++isSecretWordSeparatedByLine():boolean
 }
 Interface HangedManPlayer
     class HangMan{
@@ -36,7 +37,6 @@ Interface HangedManPlayer
     class Round{
     +reversePlayer(Player player1, Player player2)
     }
-
     class Turn{
         -WordGiverable wordGiver
         -WordGuesserable wordGuesser

@@ -11,12 +11,10 @@ public class Game {
     public void play() {
         System.out.println("select Players");
 
-
     }
 
     public void getPlayer(GamePlayerListProvider getplayers) {
         players = getplayers.getPlayer(10);
-
     }
 
 }
