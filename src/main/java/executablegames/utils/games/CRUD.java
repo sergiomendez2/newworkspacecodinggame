@@ -37,7 +37,6 @@ public class CRUD {
                 break;
         }
     }
-
     private void updatePlayer(){
 
     }

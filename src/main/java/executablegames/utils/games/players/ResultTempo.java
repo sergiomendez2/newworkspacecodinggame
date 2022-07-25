@@ -1,6 +1,6 @@
 package executablegames.utils.games.players;
 
-import executablegames.utils.games.ttt.game.TypeGame;
+import executablegames.utils.TypeGame;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor

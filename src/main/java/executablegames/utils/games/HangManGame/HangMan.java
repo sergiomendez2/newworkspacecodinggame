@@ -1,7 +1,7 @@
 package executablegames.utils.games.HangManGame;
 
 public class HangMan {
-    private final int MAX_ATTEMPTS = 8;
+    public final int MAX_ATTEMPTS = 8;
 
     public int getAmountOfPlayers() {
         return 10;

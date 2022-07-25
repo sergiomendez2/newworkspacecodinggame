@@ -16,7 +16,7 @@ interface gamePlayer{
         +{abstract} play()
         +getPlayer(gamePlayerList getPlayer)
     }
-    interface gamePlayerList{
+    interface GamePlayerListProvider{
             +getPlayerList(int total_Players): gamePlayer[]
     }
 
@@ -69,8 +69,8 @@ Interface HangedManPlayer
 
 gamePlayer..|> HangedManPlayer
 Player ..|> gamePlayer
-ListOfPlayer ..|> gamePlayerList
-Game..>gamePlayerList
+ListOfPlayer ..|> GamePlayerListProvider
+Game..>GamePlayerListProvider
 Game..|>HangMan
 Game*--gamePlayer
 IA--|>Player
