@@ -1,6 +1,6 @@
 package executablegames.games.players;
 import executablegames.games.ttt.game.gamePlayerListProvider;
-import executablegames.games.HangManGame.game.Game;
+import executablegames.games.HangManGame.game.HangManGame;
 
 public class ListOfPlayers implements gamePlayerListProvider {
     Player[] players = new Player[10];
@@ -10,7 +10,7 @@ public class ListOfPlayers implements gamePlayerListProvider {
 
         for (int i = 2; i <= 10; i++) {
             System.out.println("Enter the name of player ");
-            String name = Game.scanner.nextLine();
+            String name = HangManGame.scanner.nextLine();
             int id = players.length + 1;
             players[i] = new Human(id, name);
         }
@@ -29,6 +29,5 @@ public class ListOfPlayers implements gamePlayerListProvider {
         }
         return playersListTempo;
     }
-
 
 }

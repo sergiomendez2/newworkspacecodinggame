@@ -17,4 +17,6 @@ public class Result {
         Player = player;
         this.typeGame = typeGame;
     }
+
+
 }

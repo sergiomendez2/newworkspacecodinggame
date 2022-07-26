@@ -8,8 +8,8 @@ import executablegames.games.players.Player;
 
 import java.util.Scanner;
 
-public class Game {
-    public GamePlayer [] players;
+public class HangManGame {
+    public GamePlayer [] players ;
     HangMan hangMan;
     GamePlayerListProvider gameProvider;
     Turn turn;
@@ -19,7 +19,7 @@ public class Game {
         // TODO implement here
     }
     public void play() {
-
+        getPlayer();
         System.out.println(" available Players:");
         for (int i = 0; i < players.length; i++) {
             System.out.println( players[i].toString());

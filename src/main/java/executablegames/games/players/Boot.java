@@ -1,5 +1,5 @@
 package executablegames.games.players;
-import executablegames.games.HangManGame.game.Game;
+import executablegames.games.HangManGame.game.HangManGame;
 import executablegames.games.ttt.Board;
 import lombok.NoArgsConstructor;
 import java.util.Random;
@@ -16,8 +16,8 @@ public class Boot extends Player {
     @Override
     public String giveWord() {
         System.out.println("Enter the secret word: ");
-        Game.scanner.nextLine();
-        String word = Game.scanner.nextLine();
+        HangManGame.scanner.nextLine();
+        String word = HangManGame.scanner.nextLine();
         return word;
     }
 
