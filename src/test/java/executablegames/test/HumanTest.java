@@ -1,6 +1,6 @@
 package executablegames.test;
 
-import executablegames.utils.games.players.Human;
+import executablegames.games.players.Human;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -14,7 +14,6 @@ public class HumanTest {
         human.setName(null);
         assertEquals("human", human.getName());
     }
-
 
 
 }

@@ -1,8 +1,7 @@
 package executablegames.test;
 
-import executablegames.utils.games.HangManGame.HangedMan;
+import executablegames.games.HangManGame.HangedMan;
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
