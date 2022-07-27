@@ -1,14 +1,11 @@
 package executablegames.games;
 
-import executablegames.games.HangManGame.game.HangManGame;
 import executablegames.games.ttt.game.Game;
-
 import java.util.Scanner;
 
 public class MainGames {
     private CRUD crud = new CRUD();
     Game gameTTT = new Game();
-    HangManGame gameHangMan = new HangManGame();
     Statistics statistics = new Statistics();
     Scanner scanner = new Scanner(System.in);
 
@@ -46,7 +43,7 @@ public class MainGames {
                         //gameTTT.play();
                         break;
                     case 2:
-                        gameHangMan.play();
+                        //llamar hangman
                         break;
                     default: printMenu(); break;
                 }
