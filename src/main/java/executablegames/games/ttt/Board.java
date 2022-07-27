@@ -5,7 +5,7 @@ public class Board{
     // 0 means empty
     // 1 means X
     // 2 means O
-    public int[][] board= new int[3][3];
+    public int[][] board = new int[3][3];
     // tablero instrucciones
     public void instructionBoard(){
         System.out.println("| - | - | - |");

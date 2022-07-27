@@ -1,8 +1,11 @@
 package executablegames.games;
 
 import executablegames.games.players.ListOfPlayers;
+import executablegames.games.players.Player;
 
+import java.util.Arrays;
 import java.util.Scanner;
+
 
 public class CRUD {
     ListOfPlayers listOfPlayers = new ListOfPlayers();
@@ -12,7 +15,7 @@ public class CRUD {
 
     public void executeCRUD(){
         System.out.println("Select an option:");
-        System.out.println("1. Create player");
+        System.out.println("1. Create players");
         System.out.println("2. Show players");
         System.out.println("3. Update player");
         System.out.println("4. Delete player");
@@ -21,7 +24,7 @@ public class CRUD {
 
         switch(option){
             case 1:
-                //listOfPlayers.createPlayer();
+                listOfPlayers.createPlayer();
                 break;
             case 2:
                 printPlayers();
@@ -30,19 +33,20 @@ public class CRUD {
                 updatePlayer();
                 break;
             case 4:
-                //deletePlayer();
+                deletePlayer();
                 break;
             default:
                 MainGames mainGames = new MainGames();
                 mainGames.printMenu();
                 break;
         }
+        executeCRUD();
     }
 
     private void printPlayers(){
         System.out.println("---Players---");
         for (int i = 0; i < 10; i++){
-            //System.out.println(listOfPlayers.getSinglePlayers(i).toString());
+            System.out.println(listOfPlayers.getSinglePlayer(i).toString());
         }
     }
 
@@ -52,15 +56,15 @@ public class CRUD {
         System.out.println("Insert player's Id:");
         idPlayer = scanner.nextInt();
 
-//        for(int i=0; i<listOfPlayers.getPlayers().length; i++){
-//            if(listOfPlayers.getSinglePlayers(i).getId()==(idPlayer)){
-//                String tempName = listOfPlayers.getSinglePlayers(i).getName();
-//                System.out.println("Insert new name:");
-//                String newName = scanner.next();
-//                listOfPlayers.getSinglePlayers(i).setName(newName);
-//                System.out.println(tempName + "was changed to " + newName + "successfully");
-//            }
-//        }
+        for(int i=0; i<listOfPlayers.getPlayers().length; i++){
+            if(listOfPlayers.getSinglePlayer(i).getId()==(idPlayer)){
+                String tempName = listOfPlayers.getSinglePlayer(i).getName();
+                System.out.println("Insert new name:");
+                String newName = scanner.next();
+                listOfPlayers.getSinglePlayer(i).setName(newName);
+                System.out.println(tempName + "was changed to " + newName + "successfully");
+            }
+        }
     }
 
     private void deletePlayer(){
@@ -69,15 +73,16 @@ public class CRUD {
         System.out.println("Insert player's Id:");
         idPlayer = scanner.nextInt();
 
-//        for(int i=0; i<listOfPlayers.getPlayers().length; i++){
-//            if(listOfPlayers.getSinglePlayers(i).getId()==(idPlayer)){
-//                String tempName = listOfPlayers.getSinglePlayers(i).getName();
-//                Player tempList[] = listOfPlayers.getPlayers();
-//                Player tempPlayer = listOfPlayers.getSinglePlayers(i);
-//                Player[] newList = Arrays.stream(tempList).filter(s->!s.equals(tempPlayer)).toArray(Player[]::new);
-//                listOfPlayers.setPlayers(newList);
-//                System.out.println(tempName + "was deleted successfully");
-//            }
-//        }
+        for(int i=0; i<listOfPlayers.getPlayers().length; i++){
+            if(listOfPlayers.getSinglePlayer(i).getId()==(idPlayer)){
+                String tempName = listOfPlayers.getSinglePlayer(i).getName();
+                Player tempList[] = listOfPlayers.getPlayers();
+                Player tempPlayer = listOfPlayers.getSinglePlayer(i);
+                Player[] newList = Arrays.stream(tempList).filter(s->!s.equals(tempPlayer)).toArray(Player[]::new);
+                listOfPlayers.setPlayers(newList);
+                System.out.println(tempName + "was deleted successfully");
+            }
+        }
     }
 }
+

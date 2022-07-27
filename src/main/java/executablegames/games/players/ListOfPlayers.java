@@ -19,6 +19,18 @@ public class ListOfPlayers implements gamePlayerListProvider {
         System.out.println("Players are created");
     }
 
+    public Player getSinglePlayer(int pos){
+        return players[pos];
+    }
+
+    public void setPlayers(Player player[]){
+        this.players = player;
+    }
+
+    public Player[] getPlayers(){
+        return players;
+    }
+
 
     @Override
     public Player[] getPlayer(int totalPlayers) {

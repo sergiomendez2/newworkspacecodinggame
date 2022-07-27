@@ -1,11 +1,15 @@
 package executablegames.games;
 
+
+import executablegames.games.HangManGame.game.HangManGame;
 import executablegames.games.ttt.game.Game;
+
 import java.util.Scanner;
 
 public class MainGames {
     private CRUD crud = new CRUD();
     Game gameTTT = new Game();
+    HangManGame hangManGame = new HangManGame();
     Statistics statistics = new Statistics();
     Scanner scanner = new Scanner(System.in);
 
@@ -20,7 +24,6 @@ public class MainGames {
         System.out.println("4. Exit");
         System.out.println("\nSelect an option:");
         executeOption();
-        System.out.println("Hola mundo");
     }
 
     private void printGameOptions() {
@@ -31,7 +34,7 @@ public class MainGames {
         System.out.println("\nSelect an option:");
     }
 
-    public void executeOption(){
+    private void executeOption(){
         int option = scanner.nextInt();
 
         switch (option){
@@ -40,10 +43,11 @@ public class MainGames {
                 int gameOption = scanner.nextInt();
                 switch (gameOption){
                     case 1:
-                        //gameTTT.play();
+                        gameTTT.play();
                         break;
                     case 2:
-                        //llamar hangman
+                        hangManGame.play();
+                        printMenu();
                         break;
                     default: printMenu(); break;
                 }
@@ -56,5 +60,6 @@ public class MainGames {
                 break;
             default: System.out.println("Thanks for playing... :D"); break;
         }
+        executeOption();
     }
 }
