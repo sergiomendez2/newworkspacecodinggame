@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 public class Human extends Player {
-    Board board;
+    Board board = new Board();
 
     public Human(int id, String name) {
         super(id, name);
@@ -47,9 +47,9 @@ public class Human extends Player {
         int row = (position - 1) / 3;
         int col = (position - (row * 3)) - 1;
         //fila y columna en base a posicion
-        if (board.getBoard()[row][col] == 0) {
-            if (pieceType.equals("X")) board.getBoard()[row][col] = 1;
-            if (pieceType.equals("O")) board.getBoard()[row][col] = 2;
+        if (board.board[row][col] == 0) {
+            if (pieceType.equals("X")) board.board[row][col] = 1;
+            if (pieceType.equals("O")) board.board[row][col] = 2;
             return true;
         }
         return false;

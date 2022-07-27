@@ -56,6 +56,8 @@ public class MainGames {
                 crud.executeCRUD();
                 break;
             case 3:
+                System.out.println("statistics Game");
+                System.out.println("\n");
                 statistics.showStatistics();
                 break;
             default: System.out.println("Thanks for playing... :D"); break;

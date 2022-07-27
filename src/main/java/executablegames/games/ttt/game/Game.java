@@ -11,7 +11,6 @@ public class Game {
 		Board board = new Board();
 		Human human = new Human();
 		Boot boot = new Boot();
-		board.getBoard();
 		board.instructionBoard();
 		System.out.println("Please enter a position: ");
 		int position = userInputReader.nextInt();
@@ -23,7 +22,7 @@ public class Game {
 			System.out.println("Please enter a position:");
 			position = userInputReader.nextInt();
 			human.placePieceX(position, "X");
-			isGameInProgress = Coordinate.resolve(board.getBoard())== Coordinate.GameState.IN_PROGRESS;
+			isGameInProgress = Coordinate.resolve(board.board)== Coordinate.GameState.IN_PROGRESS;
 		}
 		if(!isGameInProgress) {
 			board.displayBoard();

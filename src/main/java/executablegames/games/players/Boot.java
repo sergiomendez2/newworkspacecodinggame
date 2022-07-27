@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.Scanner;
 @NoArgsConstructor
 public class Boot extends Player {
-    Board board;
+    Board board = new Board();
     private final  String ABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     public Boot(int id, String name) {
         super(id, name);
@@ -52,10 +52,10 @@ public class Boot extends Player {
         int col = (position - (row*3))-1;
         boolean wasPiecePlace = false;
         while(!wasPiecePlace && !board.isFull()) {
-            if(board.getBoard()[row][col]==0) {
+            if(board.board[row][col]==0) {
                 wasPiecePlace=true;
-                if (pieceType.equals("X")) board.getBoard()[row][col] = 1;
-                if (pieceType.equals("O")) board.getBoard()[row][col] = 2;
+                if (pieceType.equals("X")) board.board[row][col] = 1;
+                if (pieceType.equals("O")) board.board[row][col] = 2;
             }else{
                 row = new Random().nextInt(3);
                 col = new Random().nextInt(3);

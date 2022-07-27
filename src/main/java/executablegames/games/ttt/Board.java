@@ -5,7 +5,11 @@ public class Board{
     // 0 means empty
     // 1 means X
     // 2 means O
-    public int[][] board = new int[3][3];
+    public int[][] board;
+    public Board(){
+        board = new int[3][3];
+
+    }
     // tablero instrucciones
     public void instructionBoard(){
         System.out.println("| - | - | - |");
@@ -47,7 +51,5 @@ public class Board{
         }
         return true;
     }
-    public int[][] getBoard(){
-        return board;
-    }
+
 }
