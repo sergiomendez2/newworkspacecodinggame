@@ -1,51 +1,58 @@
 package executablegames.games.HangManGame;
 
+import executablegames.games.TypeGame;
+import executablegames.games.players.ListOfResult;
 import executablegames.games.players.Player;
+import executablegames.games.players.Result;
 import lombok.NoArgsConstructor;
 
 import java.util.Scanner;
 
 @NoArgsConstructor
-public class Turn{
+public class Turn {
     Scanner sc = new Scanner(System.in);
     private WordGiverable wordGiverable;
     private WordGuesserable wordGuesserable;
     private HangedMan hangedman = new HangedMan();
+    private Result listOfResult;
+    public Turn(int maxAttempts, Player player1, Player player2) {
+        wordGiverable = (WordGiverable) player1;
+        wordGuesserable = (WordGuesserable) player2;
+        boolean isGameOver = false;
+        boolean isLetterGuessed = false;
+        String word = wordGiverable.giveWord();
+        System.out.println(hangedman.separateSecretWordInLine(word));
+        do {
+            System.out.println("tries left: " + maxAttempts);
+            System.out.println(hangedman.secretWordSeparatedByLine);
+            char letter = wordGuesserable.tryLetter();
+            for (int i = 0; i < word.length(); i++) {
+                if (word.charAt(i) == letter) {
+                    hangedman.secretWordSeparatedByLine[i] = letter;
+                    isLetterGuessed = true;
+                }
 
-   public Turn(int maxAttempts, Player player1, Player player2) {
-       wordGiverable = (WordGiverable) player1;
-       wordGuesserable =(WordGuesserable) player2;
-       boolean isGameOver = false;
-       boolean isLetterGuessed = false;
-       String word = wordGiverable.giveWord();
-       System.out.println(hangedman.separateSecretWordInLine(word));
-       do {
-           System.out.println("tries left: " +maxAttempts);
-           System.out.println(hangedman.secretWordSeparatedByLine);
-           char letter = wordGuesserable.tryLetter();
-           for (int i = 0; i < word.length(); i++) {
-               if (word.charAt(i) == letter) {
-                   hangedman.secretWordSeparatedByLine[i] = letter;
-                   isLetterGuessed = true;
-               }
-
-           } //if letter is not in word, decrease attempts
-               if (!isLetterGuessed) {
-                   --maxAttempts;
-                   if (maxAttempts == 0) {
-                       System.out.println("You lost");
-                       isGameOver = true;
-                   }
-               }else{
-                isGameOver = !hangedman.isSecretWordSeparatedByLine();
-               if (isGameOver) {
-                   System.out.println("You won");
+            } //if letter is not in word, decrease attempts
+            if (!isLetterGuessed) {
+                --maxAttempts;
+                if (maxAttempts == 0) {
+                    System.out.println("You lost");
+                    listOfResult = new ListOfResult(0,1,0, player2,TypeGame.HANGMAN);
+                    ListOfResult.add(listOfResult);
                     isGameOver = true;
-               }
-               }
-           }while (!isGameOver);
-       }
-   }
+                }
+            } else {
+                isGameOver = !hangedman.isSecretWordSeparatedByLine();
+                if (isGameOver) {
+                    System.out.println("You won");
+                    listOfResult = new ListOfResult(1,0,0, player2,TypeGame.HANGMAN);
+                    ListOfResult.add(listOfResult);
+                    isGameOver = true;
+                }
+            }
+        } while (!isGameOver);
+    }
+}
 
 
 
